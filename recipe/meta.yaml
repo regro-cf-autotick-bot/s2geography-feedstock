@@ -1,5 +1,5 @@
 {% set name = "s2geography" %}
-{% set version = "0.2.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/paleolimbot/s2geography/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 96e07816bd83a5e4cf8bcf7cf001705ed94026c9ba7cc586d4aa2559a54cc02d
+  sha256: 97705498ad0f00720ecce1b7fc5bb190bfe62d9a7e5ac8ef972cddcd83f543ff
   patches:
     # TODO: remove the patch below for the next s2geography release
     - 0001-cmake-exclude-nanoarrow-from-all-install-targets.patch
 
 build:
-  number: 2
+  number: 0
   run_exports:
     # breaking changes are expected in minor 0.x releases
     - {{ pin_subpackage('s2geography', max_pin='x.x') }}
